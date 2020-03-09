@@ -14,6 +14,7 @@ document.querySelector('#submit').addEventListener('click',
   document.querySelector('#social-no').addEventListener('click', () => {
     document.querySelectorAll('.social-check').forEach(check => {
       check.disabled = true;
+      check.checked = false;
     });
   });
 
@@ -22,6 +23,7 @@ document.querySelector('#submit').addEventListener('click',
     const telephone = document.querySelector('#telephone').value;
     const meetDescription = document.querySelector('#meet-description').value;
     let socialNetworks = [];
+    let formData = {};
 
     if(useSocialNetworks.checked){
       document.querySelectorAll('.social-check').forEach(button => {
@@ -29,15 +31,20 @@ document.querySelector('#submit').addEventListener('click',
           socialNetworks.push(button.value);
         }
       });
-    }
 
-    const formData = {
-      name,
-      telephone,
-      meetDescription,
-      "socialNetworks": socialNetworks
+      formData = {
+        name,
+        telephone,
+        meetDescription,
+        "socialNetworks": socialNetworks,
+      };
+    }else{
+      formData = {
+        name,
+        telephone,
+        meetDescription,
+      }
     };
-
     console.log(formData);
   };
 
