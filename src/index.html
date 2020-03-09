@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <form id="form">
+    <label for="name">Nome:</label>
+    <input placeholder="Nome + Sobrenome" pattern="[a-zA-Z]+ [a-zA-Z]+$" name="name" type="text" required id="name">
+    <label for="telephone">Telefone:</label>
+    <input placeholder="XX-XXXXXXXXX" pattern="[0-9]{2}-[0-9]{9}" name="telephone" type="text" id="telephone" />
+
+    <label for="meet-description">Como nos Conheceu?</label>
+    <select id="meet-description">
+      <option value="tv">TV</option>
+      <option value="internet">Internet</option>
+      <option value="othe">Outros</option>
+    </select>
+    
+    <label for="social">Possui rede social?</label>
+    <div id="social">
+      <input id="social-yes" type="radio" name="social" id="yes">
+      <label for="yes">Sim</label>
+      <input id="social-no" type="radio" name="social" id="no">
+      <label for="no">Não</label>
+    </div>
+
+
+    <div id="social-list">
+      <div>
+        <input disabled class="social-check" type="checkbox" id="facebook" name="social" value="facebook">
+        <label for="facebook">Facebook</label><br>
+      </div>
+      <div>
+        <input disabled class="social-check" type="checkbox" id="linkedin" name="social" value="linkedin">
+        <label for="linkedin">Linkedin</label><br>
+      </div>
+      <div>
+        <input disabled class="social-check" type="checkbox" id="Instagram" name="social" value="Instagram">
+        <label for="Instagram">Instagram</label>
+      </div>
+    </div>
+
+    <button id="submit" type="submit">Salvar</button>
+  </form>
+  <script src="index.js"></script>
+</body>
+
+</html>
